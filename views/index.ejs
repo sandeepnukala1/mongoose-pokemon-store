@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mongoose Store</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+      <span class="main-header animate_animated animate__pulse">Pokemon Cards</span>
+      <div style="float: right; margin-top: 12px;">
+        <input type="text" placeholder="Search Pokemon..." name="subject"/>
+      </div>
+    </header>
+      <main>
+        <div style="width: 100%;" class="main-content">
+          <div class="card"><a class="button" href="/products/new">Add New Pokemon Card</a></div>
+          
+         </div>
+          <div class="main-content">
+            
+            <% for (p of products) { %>
+              <div class="card">
+                <a  href="/products/<%= p.name %>">
+                  <img width="200px" src="<%= p.img %>" alt="">
+                </a>
+                <a  href="/products/<%= p.name %>">
+                  <p class="custom-font"> <%= p.name %></p>
+                  <p style="text-align: center;"> Price: $<%= p.price %></p>
+                  <% if (p.qty === 0) { %>
+                    <p style="text-align: center;"> OUT OF ORDER</p>
+                  <% } else { %>
+                    <p style="text-align: center;"> In Stock: <%= p.qty %></p>
+                  <% } %>
+                  
+                </a>
+              </div>
+            <% } %>
+          </div>
+      </main>
+    <footer></footer>
+</body>
+</html>

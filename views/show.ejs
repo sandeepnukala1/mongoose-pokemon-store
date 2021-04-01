@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <span class="main-header animate_animated animate__pulse">Pokemon Cards</span>
+        <div style="float: right; margin-top: 12px;">
+          <input type="text" placeholder="Search Pokemon..." name="subject"/>
+        </div>
+      </header>
+    <main>
+        <div style="width: 100%;" class="main-content">
+            <div class="card"><a class="button" href="/products">Go back to products</a></div>
+           </div>
+        
+          <div style="justify-content: center;" class="main-content">
+              <div class="card">
+                <img width="300px" src="<%= product.img %>" alt="">
+              </div>
+              <div>
+                <div class="card"><a class="button" href="/products/<%= product.name %>/edit">Edit</a></div>
+               </div>
+              <div class="card">
+                  <div class="description">
+                    <p class="custom-font">Description: <%= product.description %></p>
+                    <p class="custom-font" style="text-align: center;"> Price: $<%= product.price %></p>
+                    <p class="custom-font" style="text-align: center;"> In Stock: <%= product.qty %></p>
+                    <ul style="display: flex; justify-content: center; padding: 0;">
+                        <li>
+                          <% if (product.qty === 0) { %>
+                            <p style="margin-top: 15px;" style="text-align: center;"> OUT OF ORDER</p>
+                          <% } else { %>
+                            <form class="delete" action="/products/<%= product.name %>?_method=PATCH" method="post">
+                            <input style="margin: 2px; background-color: #9bcc50;" class="button" type="submit" value="Buy"/>
+                            </form>
+                          <% } %>
+                          
+                        </li>
+                        <li>
+                          <form class="delete" action="/products/<%= product._id %>?_method=DELETE" method="post">
+                          <input style="margin: 2px;background-color: #fd7d24;" class="button" type="submit" value="Delete"/>
+                          </form>
+                        </li>
+                    </ul>
+                 </div>
+              </div>
+          </div>
+      </main>
+</body>
+</html>

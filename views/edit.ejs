@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <span class="main-header animate_animated animate__pulse">Pokemon Cards</span>
+        <div style="float: right; margin-top: 12px;">
+          <input type="text" placeholder="Search Pokemon..." name="subject"/>
+        </div>
+      </header>
+    <main>
+        <div style="width: 100%;" class="main-content">
+            <div class="card"><a class="button" href="/products">Go back to products</a></div>
+           </div>
+        
+          <div style="justify-content: center;" class="main-content">
+              <div class="card">
+                <img width="300px" src="<%= product.img %>" alt="">
+              </div>
+              
+              <div class="card">
+                  <div class="description">
+                    <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+                        Name: <input type="text" name="name" value="<%= product.name %>"/><br />
+                        Description: <input type="text" name="description" value="<%= product.description %>"/><br />
+                        Image Link: <input type="text" name="img" value="<%= product.img %>"/><br />
+                        Price: <input type="text" name="price" value="<%= product.price %>"/><br />
+                        Quantity: <input type="number" name="qty" value="<%= product.qty %>"/><br />
+                        <input class="button" type="submit" value="Submit Changes" />
+                    </form>
+                 </div>
+              </div>
+          </div>
+      </main>
+</body>
+</html>

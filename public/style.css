@@ -1,0 +1,74 @@
+/* Global elements css */
+body {
+  background: #A2D7D5;
+  font-family: "Gill Sans", sans-serif;
+}
+
+header {
+  margin-bottom: 15px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* Custom css classes */
+.custom-font {
+  text-align: center;
+  color: #313131;
+  text-transform: none;
+  font-size: 1.5rem;
+  padding-bottom: 5px;
+  margin: 0; 
+}
+
+.main-header {
+  font-size: 2.5rem;
+  padding: 2px;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button {
+  background-color: #30a7d7;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  clear: both;
+  cursor: pointer;
+  font-size: 105%;
+  float: left;
+  line-height: 125%;
+  padding: 0.75em 1.25em 0.675em;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: none;
+}
+
+.description {
+  width: 300px;
+}
+
+@media screen and (min-width: 1024px) {
+.description {
+  width: 500px;
+}
+}
