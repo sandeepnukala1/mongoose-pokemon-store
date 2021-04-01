@@ -8,4 +8,6 @@
 
 - make sure to replace MONGODB_URI with a working Mongo URL
 
+- make sure to run npm run seed to get the data for your application
+
 - enjoy!
